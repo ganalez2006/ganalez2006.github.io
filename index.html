@@ -17,21 +17,26 @@
 			padding: 1rem;
 			margin: 0 0 .5rem;
 			text-align: center;
+			max-width: 100%;
 		}
 		ul {
 			padding: 0;
-			margin: 0;
-			max-width: calc(320px * 3);
+			max-width: 320px;
 			width: 100%;
-			margin: 0 auto 1rem;
+			margin: 0 auto 2rem;
 		}
 		li {
 			list-style: none;
 			position: relative;
-			margin-bottom: 1rem;
+			max-width: 320px;
+			display: block;
+			margin: 0 0 1rem;
+			border-radius: 4px;
+			overflow: hidden;
 		}
 		li img {
-			width: 320px;
+			width: 100%;
+			max-width: 320px;
 			height: 365px;
 			object-fit: cover;
 		}
@@ -53,10 +58,22 @@
 		@media screen and (min-width: 640px) {
 			ul {
 				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				grid-gap: .5rem;
+				max-width: calc(320px * 2);
+			}
+			li {
+				margin-bottom: 0;
+			}
+		}
+
+		@media screen and (min-width: 960px) {
+			ul {
+				display: grid;
 				grid-template-columns: repeat(3, 1fr);
 				grid-gap: .5rem;
+				max-width: calc(320px * 3);
 			}
-			
 		}
 	</style>
 </head>
